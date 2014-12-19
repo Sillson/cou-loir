@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Spoonerstreet</title>
+  <meta content="width=device-width", initial-scale="1.0" name="viewport">
+  <title>
+    <%= @title || 'Spooner Street Apartments | Giggity' %>
+  </title>
+  <meta content="<%= @description || 'It seems today, that all we see, is violence in movies and sex on TV.' %>" name="description"/>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+<div class='full-area'>
+  <%= render 'layouts/header' %>
+  <%= yield %>
+  <%= render 'layouts/footer' %>
+</div>
 
 </body>
 </html>
